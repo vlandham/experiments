@@ -78,18 +78,19 @@ Plot = () ->
       .attr("width", (d) -> xScale(d.amount))
       .attr("height", rectHeight)
 
-    pointG.append("rect")
-      .attr("class", "na")
-      .attr("x",(d) -> xScale(d.amount))
-      .attr("y", layerBuffer / 2)
-      .attr("width", (d) -> xScale(d.na))
-      .attr("height", rectHeight)
 
     pointG.append("rect")
       .attr("class", "exit")
-      .attr("x",(d) -> xScale(d.amount + d.na))
+      .attr("x",(d) -> xScale(d.amount))
       .attr("y", layerBuffer / 2)
       .attr("width", (d) -> xScale(d.exit))
+      .attr("height", rectHeight)
+
+    pointG.append("rect")
+      .attr("class", "na")
+      .attr("x",(d) -> xScale(d.amount + d.exit))
+      .attr("y", layerBuffer / 2)
+      .attr("width", (d) -> xScale(d.na))
       .attr("height", rectHeight)
 
     $('svg .exit').tipsy({
