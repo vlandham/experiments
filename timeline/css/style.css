@@ -1,0 +1,33 @@
+svg {
+  display: block;
+  margin: auto;
+}
+
+.line {
+  fill: none;
+  stroke: #000;
+  stroke-width: 2px;
+}
+
+.axis {
+  shape-rendering: crispEdges;
+}
+
+.axis text {
+  font: 18px sans-serif;
+}
+
+.x.axis line {
+  stroke: #ddd;
+  stroke-opacity: 0.6;
+}
+
+.x.axis path {
+  display: none;
+}
+
+
+.rect {
+  stroke-width: 0;
+  /* stroke: black; */
+}

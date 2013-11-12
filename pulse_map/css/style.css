@@ -1,0 +1,82 @@
+body {
+  /* background-color: #111111; */
+  background-color: white;
+}
+
+.cover {
+  /* fill: #111111; */
+  fill: white;
+}
+
+circle,
+path {
+  fill: none;
+  stroke: #000;
+}
+
+circle {
+  stroke-width: 2px;
+}
+
+path {
+  fill: none;
+  stroke-linejoin: round;
+}
+
+.sphere,
+.graticule {
+  stroke: white;
+}
+
+.graticule {
+  fill: none;
+  /* stroke: none; */
+  stroke-width: .5px;
+  stroke-opacity: 0.3;
+  stroke-dasharray: 2 2;
+}
+
+
+
+.land {
+  /* fill: #2A3F68; */
+  /* fill: #2A3F68; */
+  fill: steelblue;
+  stroke: #111;
+  stroke-width: 2px;
+}
+
+.symbol {
+  /* fill: rgb(22, 162, 122); */
+  /* fill: rgb(255, 111, 64); */
+  fill: #FA6900;
+  
+  /* fill: steelblue; */
+  fill-opacity: 1;
+  stroke: #fff;
+  stroke-width: 0;
+  pointer-events: none;
+  
+}
+
+.temp_symbol {
+  /* fill: rgb(22, 162, 122); */
+  fill: none;
+  
+  stroke: #FA6900;
+  stroke-width: 3;
+  pointer-events: none;
+  
+}
+
+.city {
+  fill: #FA6900;
+  
+  /* fill: steelblue; */
+  fill-opacity: .8;
+  stroke: #fff;
+  stroke-width: 0;
+  pointer-events: none;
+}
+
+
