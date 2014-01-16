@@ -152,16 +152,9 @@ $ ->
   plot = Plot()
   display = (error, data) ->
     plotData("#vis", data, plot)
+    plot.start()
 
   queue()
     .defer(d3.csv, "data/starts.csv")
     .await(display)
-
-  startPlot = (e) ->
-    action = e.data
-    if action == 'start'
-      plot.start()
-
-  # listen for postMessage() messages 
-  window.addEventListener('message', startPlot, false)
 
