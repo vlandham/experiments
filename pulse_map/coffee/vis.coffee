@@ -88,42 +88,42 @@ WorldPlot = () ->
         .data([d])
 
 
-      line = highlight.selectAll('path').data([d])
-      line.enter().append("path")
+      # line = highlight.selectAll('path').data([d])
+      # line.enter().append("path")
 
-      line
-        .attr('x1', width / 2 + width / 6 + 50)
-        .attr('y1', 100)
-        .attr("stroke", "black")
-        .attr("stroke-width", 2)
+      # line
+      #   .attr('x1', width / 2 + width / 6 + 50)
+      #   .attr('y1', 100)
+      #   .attr("stroke", "black")
+      #   .attr("stroke-width", 2)
 
-      line.transition()
-        .duration(400)
-        .attr "d", (d,i) ->
-          start = "#{ width / 2 + width / 6 + 50} #{100}"
-          endx = projection([d.geometry.coordinates[0], d.geometry.coordinates[1]])[0]
-          endy =  projection([d.geometry.coordinates[0], d.geometry.coordinates[1]])[1]
-          "M #{start} L #{endx} #{endy}"
+      # line.transition()
+      #   .duration(400)
+      #   .attr "d", (d,i) ->
+      #     start = "#{ width / 2 + width / 6 + 50} #{100}"
+      #     endx = projection([d.geometry.coordinates[0], d.geometry.coordinates[1]])[0]
+      #     endy =  projection([d.geometry.coordinates[0], d.geometry.coordinates[1]])[1]
+      #     "M #{start} L #{endx} #{endy}"
 
-      img.enter().append('image')
-        .attr('class', 'img')
+      # img.enter().append('image')
+      #   .attr('class', 'img')
 
-      img.attr('xlink:href', d.properties.img_url)
-        .attr("width", 100)
-        .attr("height", 200)
-        .attr("x", width / 2 + width / 6)
-        .attr("y", 0)
+      # img.attr('xlink:href', d.properties.img_url)
+      #   .attr("width", 100)
+      #   .attr("height", 200)
+      #   .attr("x", width / 2 + width / 6)
+      #   .attr("y", 0)
 
-      title = highlight.selectAll(".title")
-        .data([d])
+      # title = highlight.selectAll(".title")
+      #   .data([d])
 
-      title.enter().append('text')
-        .attr('class', 'title')
-        .attr("text-anchor", "middle")
-        .attr("x", width / 2 + width / 6 + 50)
-        .attr("y", 20)
-        .attr("font-size", "18px")
-      title.text((d) -> d.properties.store.city)
+      # title.enter().append('text')
+      #   .attr('class', 'title')
+      #   .attr("text-anchor", "middle")
+      #   .attr("x", width / 2 + width / 6 + 50)
+      #   .attr("y", 20)
+      #   .attr("font-size", "18px")
+      # title.text((d) -> d.properties.store.city)
       
       # img.transition()
         # .duration(100)
@@ -205,7 +205,7 @@ WorldPlot = () ->
   parseData = (rawData) ->
     geoData = []
     rawData.forEach (d) ->
-      console.log(d.img_url)
+      # console.log(d.img_url)
       d.date = parseTime(d.hh_mm)
       d.id = d.store_num + "_" + d.style_id + "_" + d.hh_mm
       store = locations[d.store_num]
@@ -353,7 +353,7 @@ $ ->
     worldplot.world(world)
     worldplot.stores(stores)
     plotData("#vis", data, worldplot)
-    # worldplot.start()
+    worldplot.start()
 
 
   queue()
@@ -374,4 +374,4 @@ $ ->
       worldplot.start()
 
   # listen for postMessage() messages 
-  window.addEventListener('message', startPlot, false)
+  # window.addEventListener('message', startPlot, false)
