@@ -278,6 +278,7 @@ $ ->
    d3.select("#vis")
      .datum(data)
      .call(stacked_weight)
+   intervalId = window.setInterval(animate, 1200)
 
   animate = () ->
     stacked_weight.add()
@@ -285,19 +286,8 @@ $ ->
   stopPlot = () ->
     clearInterval(intervalId)
 
-  handleMessages = (message) ->
-    command = message.data
-    if command == 'start'
-      stacked_weight.add()
-      intervalId = window.setInterval(animate, 1200)
-    if command == 'stop'
-      console.log('stop')
-      stopPlot()
-
-
   queue()
     .defer(d3.json, "data/user_colors.json")
     .await(display)
 
-  window.addEventListener('message', handleMessages, false)
 
