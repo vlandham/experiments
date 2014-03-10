@@ -1,0 +1,47 @@
+[
+    {
+        "id": "radarchart",
+        "name": "Radar Chart",
+        "description": "Attempting to replicate radar charts featured in a statistical atlas of yore.",
+        "tags": [
+            "vintage"
+        ],
+        "date": "2014-01-01",
+        "img": "radar.png",
+        "url": "./radar_charts"
+    },
+    {
+        "id": "fingerprints",
+        "name": "Color Fingerprints",
+        "description": "Fun animation of stacked bar charts. Need I say more?",
+        "tags": [
+            "animation"
+        ],
+        "date": "2014-01-01",
+        "img": "fingerprints.png",
+        "url": "./fingerprints"
+    },
+    {
+        "id": "timeline",
+        "name": "Employee Timeline",
+        "description": "Little timeline of when my co-workers started their employment. Used for a few presentations.",
+        "tags": [
+            "animation"
+        ],
+        "date": "2014-01-01",
+        "img": "timeline.png",
+        "url": "./timeline"
+    },
+    {
+        "id": "pulsemap",
+        "name": "Pulsing Map",
+        "description": "Bubbles invading the U.S.! Run! Actually, just some event data over time.",
+        "tags": [
+            "animation"
+        ],
+        "date": "2014-01-01",
+        "img": "timeline.png",
+        "url": "./timeline"
+    }
+]
+
