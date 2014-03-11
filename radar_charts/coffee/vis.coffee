@@ -152,8 +152,8 @@ root.plotData = (selector, data, plot) ->
 $ ->
 
   svg = d3.select("#vis").append("svg")
-    .attr("width", 800)
-    .attr("height", 300)
+    .attr("width", 8)
+    .attr("height", 10)
 
 
   defs = svg.append("defs")
@@ -207,14 +207,14 @@ $ ->
 
   patterns = ["lines-tight-pattern", "circles-pattern", "diag-pattern"]
 
-  rects = svg.selectAll("rect").data(patterns)
+  # rects = svg.selectAll("rect").data(patterns)
 
-  rects.enter().append("path")
-    .attr("d", "M0 0 l50 10 l40 -20 l80 50 l40 80 l-120 -80 l-80 60z")
-    .attr("fill", (d) -> "url(##{d})")
-    .attr("transform", (d,i) -> "translate(#{5 + (230 * i)},#{50})")
-    .style("stroke", "black")
-    .style("stroke-width", 2)
+  # rects.enter().append("path")
+  #   .attr("d", "M0 0 l50 10 l40 -20 l80 50 l40 80 l-120 -80 l-80 60z")
+  #   .attr("fill", (d) -> "url(##{d})")
+  #   .attr("transform", (d,i) -> "translate(#{5 + (230 * i)},#{50})")
+  #   .style("stroke", "black")
+  #   .style("stroke-width", 2)
 
   plots = []
   plot = Plot()

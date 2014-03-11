@@ -67,7 +67,7 @@ update = () ->
     .append("a")
     .attr("href", (d) -> d.url)
     .append("img")
-    .attr("src", "img/test.png")
+    .attr("src", (d) -> "img/" + d.img)
 
   expE.append("a")
     .attr("href", (d) -> d.url)
