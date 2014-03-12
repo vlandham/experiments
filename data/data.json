@@ -12,6 +12,18 @@
         "url": "./radar_charts"
     },
     {
+        "id": "geoheads",
+        "name": "Projection Faces",
+        "description": "A slight riff on the nice <a href='http://bl.ocks.org/awoodruff/9216081'>Projection Face</a> tool from Andy Woodruff. Here, I just wanted to see all the faces mashed together - small multiples style.",
+        "tags": [
+            "vintage",
+            "maps"
+        ],
+        "date": "2014-01-01",
+        "img": "geo_faces.png",
+        "url": "http://bl.ocks.org/vlandham/raw/9216751/"
+    },
+    {
         "id": "fingerprints",
         "name": "Color Fingerprints",
         "description": "Fun animation of stacked bar charts. Need I say more? In this animation, each bar is an individual. The color of the garments they have purchased contribute to the colors in the stack. The data is color!",
@@ -32,6 +44,17 @@
         "date": "2014-01-01",
         "img": "timeline.png",
         "url": "./timeline"
+    },
+    {
+        "id": "idealize",
+        "name": "Idealize",
+        "description": "Visualizing <a href='http://en.wikipedia.org/wiki/Ideal_(ring_theory)'>Ideals</a> (a math thing. Not a philosophical one). Source code <a href='https://github.com/vlandham/idealize'>on github</a>. The idea is that this could integrate with more popular tools in this domain for visualization and interaction.",
+        "tags": [
+            "3D"
+        ],
+        "date": "2014-01-01",
+        "img": "idealize.png",
+        "url": "http://vallandingham.me/idealize/temp-files/test.html"
     },
     {
         "id": "pulsemap",
@@ -65,6 +88,17 @@
         ],
         "date": "2014-01-01",
         "img": "treemaps.png",
+        "url": "./treemaps"
+    },
+    {
+        "id": "statecoords",
+        "name": "State Rankings",
+        "description": "Politico Magazine <a href='http://www.politico.com/magazine/story/2014/01/states-of-our-union-are-not-all-strong-102547.html'>ranked all the states</a> based on a number of metrics. I thought it might be fun to try to explore some of them using parallel coordinates. Results are inconclusive.",
+        "tags": [
+            "charts"
+        ],
+        "date": "2014-01-01",
+        "img": "statecoords.png",
         "url": "./treemaps"
     }
 ]
