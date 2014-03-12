@@ -2,10 +2,10 @@
     {
         "id": "radarchart",
         "name": "Radar Chart",
-        "description": "Attempting to replicate radar charts featured in a statistical atlas of yore.",
+        "description": "Attempting to replicate radar charts featured in a <a href='http://www.handsomeatlas.com/us-census-statistical-atlas-1890/mortality-continued--2'>statistical atlas of yore</a>. The chart pictured here is all the folks who died of scarlet fever in the cities - in 1890. June was a bad month for the fever.",
         "tags": [
             "vintage",
-            "chart"
+            "charts"
         ],
         "date": "2014-01-01",
         "img": "radar_chart.png",
@@ -14,9 +14,9 @@
     {
         "id": "fingerprints",
         "name": "Color Fingerprints",
-        "description": "Fun animation of stacked bar charts. Need I say more?",
+        "description": "Fun animation of stacked bar charts. Need I say more? In this animation, each bar is an individual. The color of the garments they have purchased contribute to the colors in the stack. The data is color!",
         "tags": [
-            "animation"
+            "animations"
         ],
         "date": "2014-01-01",
         "img": "fingerprints.png",
@@ -25,9 +25,9 @@
     {
         "id": "timeline",
         "name": "Employee Timeline",
-        "description": "Little timeline of when my co-workers started their employment. Used for a few presentations.",
+        "description": "Little timeline of when my co-workers started their employment. Meant to show that it takes an island. Wonderful illustration work by <a href='http://erinshellman.com/'>Erin Shellman</a>. Used for a few presentations.",
         "tags": [
-            "animation"
+            "animations"
         ],
         "date": "2014-01-01",
         "img": "timeline.png",
@@ -36,9 +36,9 @@
     {
         "id": "pulsemap",
         "name": "Pulsing Map",
-        "description": "Bubbles invading the U.S.! Run! Actually, just some event data over time.",
+        "description": "Bubbles invading the U.S.! Run! Actually, just some event data over time. Every blip is a purchase. The shops grow over time as more purchases happen there. The virus will spread over the entire continent if we don't stop it.",
         "tags": [
-            "animation"
+            "animations"
         ],
         "date": "2014-01-01",
         "img": "pulse_map.png",
@@ -47,9 +47,9 @@
     {
         "id": "treefunnel",
         "name": "Funnel Tree",
-        "description": "Kind of like a conversion funnel - but with a bit more structure, and some branching. A funnel tree!",
+        "description": "Kind of like a conversion funnel - but with a bit more structure, and some branching. A funnel tree! This was meant to show the success and failure rate of some A/B testing.",
         "tags": [
-            "chart"
+            "charts"
         ],
         "date": "2014-01-01",
         "img": "funnel.png",
@@ -60,7 +60,7 @@
         "name": "TreeMaps",
         "description": "TreeMaps from the 1870s! Can you believe this graphic was used in the <a href='http://www.handsomeatlas.com/us-census-statistical-atlas-1870/church-accomodations-1870'>1870 Statistical Atlas</a>? It looks pretty modern to me (apart from the colors and data, of course).",
         "tags": [
-            "chart",
+            "charts",
             "vintage"
         ],
         "date": "2014-01-01",

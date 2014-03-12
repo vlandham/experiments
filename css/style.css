@@ -1,4 +1,8 @@
 
+p {
+  font-size: 20px;
+}
+
 .filter {
   float:left;
   margin-right: 20px;
@@ -8,12 +12,19 @@
 #filters {
   clear:both;
   height: 100%;
-  width: 50%;
+  /* width: 50%; */
   margin: auto;
+}
+
+#display {
+  margin-top: 40px;
 }
 
 .experiment {
   clear: both;
+  overflow: hidden;
+  padding-bottom: 10px;
+  display:block;
 }
 
 .experiment img {
@@ -34,6 +45,7 @@
   margin-bottom: 10px;
   float: left;
   margin-right: 20px;
+  /* height: 290px; */
 }
 
 

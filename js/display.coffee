@@ -52,6 +52,9 @@ filterData = (data) ->
 
   data
 
+getHeight = () ->
+  console.log(this.height)
+
 update = () ->
   data = filterData(allData)
   exp = vis.selectAll(".experiment")
@@ -60,7 +63,8 @@ update = () ->
   expE = exp.enter()
     .append("div")
     .attr("class", "experiment")
-    .style("opacity", 1e-6)
+    # .style("opacity", 1e-6)
+    .style("height", "0px")
 
   expE.append("div")
     .attr("class", "thumb")
@@ -68,6 +72,7 @@ update = () ->
     .attr("href", (d) -> d.url)
     .append("img")
     .attr("src", (d) -> "img/" + d.img)
+    # .attr("onload", getHeight)
 
   expE.append("a")
     .attr("href", (d) -> d.url)
@@ -77,15 +82,17 @@ update = () ->
 
   expE.append("p")
     .attr("class", "description")
-    .text((d) -> d.description)
+    .html((d) -> d.description)
 
   expE.transition()
     .duration(600)
-    .style("opacity", 1.0)
+    # .style("opacity", 1.0)
+    .style("height", null)
 
   exp.exit().transition()
     .duration(600)
-    .style("opacity", 1e-6)
+    # .style("opacity", 1e-6)
+    .style("height", "0px")
     .remove()
 
 
