@@ -3,6 +3,55 @@ p {
   font-size: 20px;
 }
 
+#header {
+/*	text-transform: lowercase;*/
+	text-align: left;
+	padding: 1.5em;
+	text-align: center;
+}
+
+#header h1 {
+  font-family: 'Helvetica', arial, serif;
+  font-weight:700;
+	font-size: 5.0em;
+	display: inline;
+	letter-spacing: -0.03em;
+}
+
+#header h1 a {
+  text-decoration: none;
+	color: #3d3d3d;
+}
+
+#header h2 {
+  position:absolute;
+  padding-top:10px;
+}
+
+#menu {
+	border-top: 3px solid #3d3d3d;
+}
+
+#menu ul {
+	list-style: none;
+	margin: 0;
+	text-align: right;
+	padding-right: 1.0em;
+}
+
+#menu ul li {
+	display: inline;
+}
+
+#menu ul li a {
+	font-size: 1.3em;
+	padding: 0 0.5em;
+	line-height: 2.5em;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+
 .filter {
   float:left;
   margin-right: 20px;
@@ -47,5 +96,18 @@ p {
   margin-right: 20px;
   /* height: 290px; */
 }
+
+#footer {
+  margin-bottom: 2em;
+  color: #3E423A;
+  font-size: 0.9em;
+  padding: 0.5em;
+  text-align: right;
+}
+
+#footer p {
+	padding-right: 1.5em;
+}
+
 
 

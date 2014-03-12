@@ -93,7 +93,7 @@
     {
         "id": "statecoords",
         "name": "State Rankings",
-        "description": "Politico Magazine <a href='http://www.politico.com/magazine/story/2014/01/states-of-our-union-are-not-all-strong-102547.html'>ranked all the states</a> based on a number of metrics. I thought it might be fun to try to explore some of them using parallel coordinates. Results are inconclusive.",
+        "description": "Politico Magazine <a href='http://www.politico.com/magazine/story/2014/01/states-of-our-union-are-not-all-strong-102547.html'>ranked all the states</a> based on a number of metrics. I thought it might be fun to try to explore some of them using parallel coordinates. Results are inconclusive. Code is <a href=''>available</a>.",
         "tags": [
             "charts"
         ],
