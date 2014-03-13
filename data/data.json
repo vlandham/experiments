@@ -99,7 +99,7 @@
         ],
         "date": "2014-01-01",
         "img": "statecoords.png",
-        "url": "./treemaps"
+        "url": "http://vallandingham.me/state_coords/"
     },
     {
       "id": "d3_sat",
