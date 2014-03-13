@@ -100,6 +100,18 @@
         "date": "2014-01-01",
         "img": "statecoords.png",
         "url": "./treemaps"
+    },
+    {
+      "id": "d3_sat",
+      "name": "Interactive Satellite",
+      "description": "Visualize data on a map in 3D! At least that was the idea.",
+      "tags": [
+        "maps",
+        "3D"
+        ],
+      "date": "2014-01-01",
+      "img": "sat.png",
+      "url": "http://vallandingham.me/d3_sat"
     }
 ]
 
