@@ -24,6 +24,17 @@
         "url": "http://bl.ocks.org/vlandham/raw/9216751/"
     },
     {
+        "id": "ma_plot",
+        "name": "Interactive MA Plot",
+        "description": "A <a href='http://en.wikipedia.org/wiki/MA_plot'>MA Plot</a> is a specialized difference plot that is used to visualize gene expression data. This interactive variety can filter out uninteresting data points, highlight individual points to get detailed listings, and color the points using a variety of mappings. Please use it to improve the analysis of your own expression data!",
+        "tags": [
+            "charts"
+        ],
+        "date": "2014-01-01",
+        "img": "maplot.png",
+        "url": "./ma_plot"
+    },
+    {
         "id": "fingerprints",
         "name": "Color Fingerprints",
         "description": "Fun animation of stacked bar charts. Need I say more? In this animation, each bar is an individual. The color of the garments they have purchased contribute to the colors in the stack. The data is color!",
