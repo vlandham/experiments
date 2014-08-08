@@ -24,6 +24,17 @@
         "url": "http://bl.ocks.org/vlandham/raw/9216751/"
     },
     {
+        "id": "orientering",
+        "name": "Orientering Times",
+        "description": "<a href='http://en.wikipedia.org/wiki/Orientering'>Orientering</a> is a crazy sport. You run around through park, city, or forest trying to find checkpoints using a compass and a elaborate map. It actually turns out to be a lot of fun. Here I was experimenting with some basic tools to look at the results from a particular race I participated in. A lot more work should go into this visual - but I like the little map that shows all the waypoints of the race - and highlights the leg of the race you are hovering over.",
+        "tags": [
+            "charts"
+        ],
+        "date": "2014-01-01",
+        "img": "orientering.png",
+        "url": "./orientering"
+    },
+    {
         "id": "ma_plot",
         "name": "Interactive MA Plot",
         "description": "A <a href='http://en.wikipedia.org/wiki/MA_plot'>MA Plot</a> is a specialized difference plot that is used to visualize gene expression data. This interactive variety can filter out uninteresting data points, highlight individual points to get detailed listings, and color the points using a variety of mappings. Please use it to improve the analysis of your own expression data!",
