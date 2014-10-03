@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="custom.css">
+  <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400' rel='stylesheet' type='text/css'>
+
+  <style>
+  #chart {
+    width: 100%;
+  }
+
+  body { margin: 0; padding: 0;}
+
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+
+  .axis {
+    font-size: 1.2em;
+  }
+
+  .bar {
+    fill: steelblue;
+  }
+
+  .x.axis path {
+    display: none;
+  }
+
+  .legend line {
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+
+  .legend text {
+    font-size: 1.4em;
+  }
+
+  /*g.x.axis text {
+    font-size: 1.2em;
+  }*/
+  </style>
+</head>
+<body>
+  <script src="js/libs/d3.min.js"></script>
+  <div id="container">
+    <div id="chart"></div>
+
+    <h3>Colors</h3>
+    <div id="colors"></div>
+  </div>
+  <script src="team_skills.js"></script>
+</body>
+</html>
