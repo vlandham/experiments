@@ -1,5 +1,16 @@
 [
     {
+        "id": "barchart",
+        "name": "Stacked Bar Chart",
+        "description": "A simple bar chart that tries to tell the story of the Data Lab team. As with the Planeteers it is when our powers combined that we become strong. This visual also includes a little color swither, so you don't have to commit to just one style.",
+        "tags": [
+            "charts"
+        ],
+        "date": "2014-10-01",
+        "img": "barchart.png",
+        "url": "./team_skills"
+    },
+    {
         "id": "radarchart",
         "name": "Radar Chart",
         "description": "Attempting to replicate radar charts featured in a <a href='http://www.handsomeatlas.com/us-census-statistical-atlas-1890/mortality-continued--2'>statistical atlas of yore</a>. The chart pictured here is all the folks who died of scarlet fever in the cities - in 1890. June was a bad month for the fever.",
