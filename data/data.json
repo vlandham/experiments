@@ -25,7 +25,7 @@
     },
     {
         "id": "orientering",
-        "name": "Orientering Times",
+        "name": "Orientering Results Dashboard",
         "description": "<a href='http://en.wikipedia.org/wiki/Orientering'>Orientering</a> is a crazy sport. You run around through park, city, or forest trying to find checkpoints using a compass and a elaborate map. It actually turns out to be a lot of fun. Here I was experimenting with some basic tools to look at the results from a particular race I participated in. A lot more work should go into this visual - but I like the little map that shows all the waypoints of the race - and highlights the leg of the race you are hovering over.",
         "tags": [
             "charts"
