@@ -14,6 +14,8 @@ h3 {
 #container {
   width: 900px;
   margin:auto;
+  padding-bottom: 20px;
+  padding-top: 20px;
 }
 
 .col {
@@ -24,5 +26,12 @@ h3 {
   float:left;
   clear:right;
   padding: 10px;
+  cursor: pointer;
+}
+
+#colors {
+  clear:both;
+  margin-bottom: 20px;
+  height: 50px;
 }
 

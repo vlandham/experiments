@@ -3,11 +3,10 @@ var margin = {
   right: 220,
   bottom: 30,
   left: 0
-},
-  // width = document.body.offsetWidth - margin.left - margin.right,
-  // height = document.body.offsetHeight - margin.top - margin.bottom;
-  width = 800;
-  height = 600;
+};
+
+var width = 800;
+var height = 600;
 
 var svg;
 
@@ -19,8 +18,8 @@ var y = d3.scale.linear()
 
 var pallates = {
   "one":["#D53E4F", "#FC8D59", "#FEE08B", "#E6F598", "#99D594", "#3288BD"],
-  "two":['rgb(102,194,165)','rgb(252,141,98)','rgb(141,160,203)','rgb(231,138,195)','rgb(166,216,84)','rgb(255,217,47)'],
   "three":['rgb(166,206,227)','rgb(31,120,180)','rgb(178,223,138)','rgb(51,160,44)','rgb(251,154,153)','rgb(227,26,28)'].reverse(),
+  "two":['rgb(102,194,165)','rgb(252,141,98)','rgb(141,160,203)','rgb(231,138,195)','rgb(166,216,84)','rgb(255,217,47)'],
   "four":["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]
 }
 
@@ -33,11 +32,10 @@ updateColors = function(newId) {
   colors = pallates[newId];
   color.range(colors);
 
-  console.log(svg);
-
   svg.selectAll(".teamMember").selectAll("rect")
+    .transition()
+    .duration(500)
     .attr("fill", function(d) {return color(d.name);});
-
 }
 
 setupColors = function() {
@@ -129,7 +127,7 @@ d3.csv("data.csv", function(error, data) {
     .attr("height", function(d) {
       return y(d.y0) - y(d.y1);
     })
-    .style("fill", function(d) {
+    .attr("fill", function(d) {
       return color(d.name);
     });
 
