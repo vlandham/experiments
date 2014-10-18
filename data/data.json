@@ -4,7 +4,7 @@
         "name": "Force Layout Subway",
         "description": "Everything is a network - even subway maps! As part of my Abuse the Force talk, I tried to apply force layouts to some more interesting datasets as ideas you might want to explore further. One of these was using a grid-based approach to network layouts for automatic subway map construction. The results are mixed, but might be interesting to someone.",
         "tags": [
-            "charts"
+            "maps"
         ],
         "date": "2014-10-16",
         "img": "subway_layout.png",
