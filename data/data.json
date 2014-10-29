@@ -36,7 +36,7 @@
         "name": "Bubble Fight",
         "description": "Just another little toy I made for my <a href='http://vallandingham.me/abusing_the_force.html'>Abusing The Force</a> talk. The center node changes its charge along with its visual display using the slider. I always thought it looked like the big fight scene in Kill Bill against the Crazy 88's - hence the color scheme. Make the center too small and all the surrounding bubbles come attack!",
         "tags": [
-            "animation"
+            "animations"
         ],
         "date": "2014-10-16",
         "img": "bubble_expand.png",
