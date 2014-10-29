@@ -1,14 +1,46 @@
 [
     {
+        "id": "aniclip",
+        "name": "Animated Clipping Paths",
+        "description": "SVG clipping paths allow you to hide portions of your SVG - clipping them from view. Here, we use clipping paths based on text attributes on top of images to make cool looking headers. Then we add some fun into the mix by animating portions of the clipping path. The possibilties for unnecessary animations are endless!",
+        "tags": [
+          "animations"
+        ],
+        "date": "2014-10-28",
+        "img": "aniclip.png",
+        "url": "http://vallandingham.me/aniclip/"
+    },
+    {
+        "id": "word_flip",
+        "name": "Word Flip",
+        "description": "This little project started with a question from <a href='https://twitter.com/jschwabish'>Jon Schwabish</a>'s son: What words are still words when flipped 180&#xb0;? Challenge Accepted. Type in a word and Word Flip shows you it flipped! With an extra bonus of listing out some words found that meet this requirement. See if you can find more!",
+        "tags": [
+        ],
+        "date": "2014-09-01",
+        "img": "word_flip.png",
+        "url": "http://vallandingham.me/word_flip/"
+    },
+    {
         "id": "subway_layout",
         "name": "Force Layout Subway",
-        "description": "Everything is a network - even subway maps! As part of my Abuse the Force talk, I tried to apply force layouts to some more interesting datasets as ideas you might want to explore further. One of these was using a grid-based approach to network layouts for automatic subway map construction. The results are mixed, but might be interesting to someone.",
+        "description": "Everything is a network - even subway maps! As part of my <a href='http://vallandingham.me/abusing_the_force.html'>Abusing the Force</a> talk, I tried to apply force layouts to some more interesting datasets as ideas you might want to explore further. One of these was using a grid-based approach to network layouts for automatic subway map construction. The results are mixed, but might be interesting to someone.",
         "tags": [
             "maps"
         ],
         "date": "2014-10-16",
         "img": "subway_layout.png",
         "url": "./subway_grid"
+    },
+    {
+        "id": "bubble_expand",
+        "name": "Bubble Fight",
+        "description": "Just another little toy I made for my <a href='http://vallandingham.me/abusing_the_force.html'>Abusing The Force</a> talk. The center node changes its charge along with its visual display using the slider. I always thought it looked like the big fight scene in Kill Bill against the Crazy 88's - hence the color scheme. Make the center too small and all the surrounding bubbles come attack!",
+        "tags": [
+            "animation"
+        ],
+        "date": "2014-10-16",
+        "img": "bubble_expand.png",
+        "url": "./bubble_expand"
     },
     {
         "id": "barchart",

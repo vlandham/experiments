@@ -51,6 +51,10 @@ p {
 	text-decoration: none;
 }
 
+#menu ul li a.highlight {
+  color: black;
+}
+
 
 .filter {
   float:left;
