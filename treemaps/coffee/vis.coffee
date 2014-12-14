@@ -3,7 +3,8 @@ root = exports ? this
 
 Plot = () ->
   # colors = {"me":"#8D040C","bap":"#322209","pres":"#3D605C","cat":"#2E050B","con":"#4B6655","epi":"#C84914","lut":"#C6581B","chr":"#87090D","oth":"#300809"}
-  colors = {"me":"url(#lines_red)","bap":"#3e290e","pres":"#3a5b57","cat":"#30050c","con":"url(#lines_blue)","epi":"#c0410f","lut":"#C6581B","chr":"#85090d","oth":"#310909"}
+  #colors = {"me":"url(#lines_red)","bap":"#3e290e","pres":"#3a5b57","cat":"#30050c","con":"url(#lines_blue)","epi":"#c0410f","lut":"#C6581B","chr":"#85090d","oth":"#310909"}
+  colors = {"me":"url(#lines_red)","bap":"#614e23","pres":"#5c7e7d","cat":"#551521","con":"url(#lines_blue)","epi":"#d96d2c","lut":"#C6581B","chr":"#ac2028","oth":"#551b1a"}
   width = 1100
   height = 900
   bigSize = 300

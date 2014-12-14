@@ -78,5 +78,49 @@
     {"name":"pres", "percent":7.44},
     {"name":"epi", "percent":6.51},
     {"name":"oth", "percent":7.0}
+   ]},
+   {"name":"georgia",
+   "id":8,
+   "size":"little",
+   "known":98,
+   "churches":[
+    {"name":"bap", "percent":47.75},
+    {"name":"me", "percent":39.0},
+    {"name":"pres", "percent":5.5},
+    {"name":"chr", "percent":2.24},
+    {"name":"oth", "percent":4.0}
+   ]},
+   {"name":"illinois",
+   "id":9,
+   "size":"little",
+   "known":80,
+   "churches":[
+    {"name":"me", "percent":29.5},
+    {"name":"pres", "percent":14.0},
+    {"name":"bap", "percent":15.5},
+    {"name":"cat", "percent":10.5},
+    {"name":"oth", "percent":31.0}
+   ]},
+   {"name":"indiana",
+   "id":10,
+   "size":"little",
+   "known":90,
+   "churches":[
+    {"name":"me", "percent":33.7},
+    {"name":"bap", "percent":14.7},
+    {"name":"pres", "percent":12.9},
+    {"name":"chr", "percent":11.6},
+    {"name":"oth", "percent":27.0}
+   ]},
+   {"name":"iowa",
+   "id":11,
+   "size":"little",
+   "known":65,
+   "churches":[
+    {"name":"me", "percent":34.1},
+    {"name":"pres", "percent":14.7},
+    {"name":"cat", "percent":13.9},
+    {"name":"bap", "percent":11.6},
+    {"name":"oth", "percent":26.3}
    ]}
 ]
