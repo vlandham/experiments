@@ -4,7 +4,21 @@ root = exports ? this
 Plot = () ->
   # colors = {"me":"#8D040C","bap":"#322209","pres":"#3D605C","cat":"#2E050B","con":"#4B6655","epi":"#C84914","lut":"#C6581B","chr":"#87090D","oth":"#300809"}
   #colors = {"me":"url(#lines_red)","bap":"#3e290e","pres":"#3a5b57","cat":"#30050c","con":"url(#lines_blue)","epi":"#c0410f","lut":"#C6581B","chr":"#85090d","oth":"#310909"}
-  colors = {"me":"url(#lines_red)","bap":"#614e23","pres":"#5c7e7d","cat":"#551521","con":"url(#lines_blue)","epi":"#d96d2c","lut":"#C6581B","chr":"#ac2028","oth":"#551b1a"}
+  names = [{"code":"me",   "name":"Methodist"},
+           {"code":"bap",  "name":"Baptist"},
+           {"code":"pres", "name":"Presbyterian"},
+           {"code":"cat",  "name":"Roman Catholic"},
+           {"code":"con",  "name":"Congregational"},
+           {"code":"epi",  "name":"Episcopal"},
+           {"code":"lut",  "name":"Lutheran"},
+           {"code":"chr",  "name":"Christian"},
+           {"code":"dut",  "name":"Dutch Reformed"},
+           {"code":"uni",  "name":"Universalist"},
+           {"code":"mor",  "name":"Mormon"},
+           {"code":"oth",  "name":"All other Denominations"}
+          ]
+  colors = {"me":"url(#lines_red)","bap":"#614e23","pres":"#5c7e7d","cat":"#551521","con":"url(#lines_blue)","epi":"#d96d2c","lut":"url(#lines_orange)","chr":"#ac2028","dut":"#9d8354", "uni":"url(#lines_purple)", "mor":"#150912","oth":"#551b1a"}
+  background = "#a89888"
   width = 1100
   height = 900
   bigSize = 300
@@ -36,6 +50,26 @@ Plot = () ->
       tre.churches.forEach (c,i) ->
         c.index = i
     rawData
+
+  addKey = () ->
+    keyWidth = 60
+    keyHeight = 12
+    keyPadding = 1
+    keys = points.selectAll(".key")
+      .data(names)
+    keyG = keys.enter().append("g")
+      .attr("class", "key")
+      .attr("transform", (d,i) -> "translate(#{((bigSize) + (padding + littleSize) * 4) - keyWidth},#{i * (keyHeight + keyPadding)})")
+    keyG.append("rect")
+      .attr("width", keyWidth)
+      .attr("height", keyHeight)
+      .attr("fill", (d) -> colors[d.code])
+
+    keyG.append("text")
+      .attr("x", -160)
+      .attr("dy", (keyHeight ))
+      .text((d) -> d.name)
+      
 
   chart = (selection) ->
     selection.each (rawData) ->
@@ -84,6 +118,45 @@ Plot = () ->
         .style("stroke", "#4B6655")
         .style("stroke-width", 3.6)
 
+      hatch3 = defs.append("pattern")
+        .attr("id", "lines_orange")
+        .attr("patternUnits", "userSpaceOnUse")
+        .attr("patternTransform", "rotate(#{-220})")
+        .attr("x", 0)
+        .attr("y", 2)
+        .attr("width", 5)
+        .attr("height", 3)
+        .append("g")
+      hatch3.append("rect")
+        .attr("fill", "white")
+        .attr("width", 5)
+        .attr("height", 3)
+      hatch3.append("path")
+        .attr("d", "M0 0 H 5")
+        .style("fill", "none")
+        .style("stroke", "#C6581B")
+        .style("stroke-width", 4.8)
+
+      hatch4 = defs.append("pattern")
+        .attr("id", "lines_purple")
+        .attr("patternUnits", "userSpaceOnUse")
+        .attr("patternTransform", "rotate(#{-220})")
+        .attr("x", 0)
+        .attr("y", 2)
+        .attr("width", 5)
+        .attr("height", 3)
+        .append("g")
+      hatch4.append("rect")
+        .attr("fill", "white")
+        .attr("width", 5)
+        .attr("height", 3)
+      hatch4.append("path")
+        .attr("d", "M0 0 H 5")
+        .style("fill", "none")
+        .style("stroke", "#77393c")
+        .style("stroke-width", 4.8)
+
+
       diag = defs.append("pattern")
         .attr("id", "diag-pattern")
         .attr("patternUnits", "userSpaceOnUse")
@@ -109,24 +182,27 @@ Plot = () ->
 
   update = () ->
 
+    addKey()
+
     tree = points.selectAll('.tree')
       .data(data).enter().append("g")
       .attr("class","tree")
       .attr "transform", (d,i) ->
         top = d.row * (padding + littleSize)
         "translate(#{(d.col) * (littleSize + padding)},#{top})"
+
     tree.append("rect")
       .attr("width", (d) -> d.realSize)
       .attr("height", (d) -> d.realSize)
       .attr("x", 0)
       .attr('y', 0)
-      .attr('fill', '#6d5d4f')
+      .attr('fill', background)
 
     tree.append("text")
       .attr("text-anchor", "middle")
       .attr("x", (d) -> d.realSize / 2)
       .attr("y", (d) -> d.realSize)
-      .attr('dy', 14)
+      .attr('dy', 18)
       .text((d) -> d.name.toUpperCase())
 
 

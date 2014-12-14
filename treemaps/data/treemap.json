@@ -122,5 +122,71 @@
     {"name":"cat", "percent":13.9},
     {"name":"bap", "percent":11.6},
     {"name":"oth", "percent":26.3}
+   ]},
+   {"name":"kansas",
+   "id":12,
+   "size":"little",
+   "known":65,
+   "churches":[
+    {"name":"me", "percent":25},
+    {"name":"pres", "percent":19.6},
+    {"name":"bap", "percent":17.0},
+    {"name":"cat", "percent":15.1},
+    {"name":"oth", "percent":22.21}
+   ]},
+   {"name":"kentucky",
+   "id":13,
+   "size":"little",
+   "known":95,
+   "churches":[
+    {"name":"bap", "percent":32.5},
+    {"name":"me", "percent":27.3},
+    {"name":"chr", "percent":15.1},
+    {"name":"pres", "percent":11.0},
+    {"name":"oth", "percent":14.5}
+   ]},
+   {"name":"louisiana",
+   "id":14,
+   "size":"little",
+   "known":64,
+   "churches":[
+    {"name":"cat", "percent":29.0},
+    {"name":"bap", "percent":24.5},
+    {"name":"me", "percent":23.7},
+    {"name":"epi", "percent":10.5},
+    {"name":"oth", "percent":13.1}
+   ]},
+   {"name":"maine",
+   "id":15,
+   "size":"little",
+   "known":88,
+   "churches":[
+    {"name":"bap", "percent":30.4},
+    {"name":"con", "percent":20.9},
+    {"name":"me", "percent":23.7},
+    {"name":"uni", "percent":6.3},
+    {"name":"oth", "percent":21.5}
+   ]},
+   {"name":"maryland",
+   "id":16,
+   "size":"little",
+   "known":92,
+   "churches":[
+    {"name":"me", "percent":45.5},
+    {"name":"cat", "percent":12.1},
+    {"name":"epi", "percent":11.0},
+    {"name":"lut", "percent":7.3},
+    {"name":"oth", "percent":23.6}
+   ]},
+   {"name":"massachusetts",
+   "id":17,
+   "size":"little",
+   "known":88,
+   "churches":[
+    {"name":"con", "percent":30.7},
+    {"name":"bap", "percent":16.0},
+    {"name":"cat", "percent":14.1},
+    {"name":"me", "percent":12.2},
+    {"name":"oth", "percent":26.3}
    ]}
 ]
