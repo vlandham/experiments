@@ -6,6 +6,26 @@ body {
 .slice {
 }
 
+.title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.big-title {
+  font-size: 25px;
+}
+
+.bottom-title {
+  font-size: 10px;
+}
+
+.key {
+  font-family: 'Playfair Display', serif;
+  font-size: 10px;
+  font-style: italic;
+}
+
 .me {
   /* fill:white; */
 }

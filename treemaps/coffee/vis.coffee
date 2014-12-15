@@ -52,7 +52,7 @@ Plot = () ->
     rawData
 
   addKey = () ->
-    keyWidth = 60
+    keyWidth = 50
     keyHeight = 12
     keyPadding = 1
     keys = points.selectAll(".key")
@@ -66,10 +66,28 @@ Plot = () ->
       .attr("fill", (d) -> colors[d.code])
 
     keyG.append("text")
-      .attr("x", -160)
+      .attr("x", -120)
       .attr("dy", (keyHeight ))
       .text((d) -> d.name)
-      
+
+  addTitle = () ->
+    titles = ["chart", "showing the ratio of",
+              "church accommodation",
+              "to the total population over 10 years of age",
+              "with the proportion of such church accommodation furnished by each of",
+              "the largest four denominations within each state and by each of",
+              "the largest eight denominations within the united states."]
+    g = points.append("g")
+      .attr("class", "title")
+      .attr("transform", "translate(#{width / 2}, 10)")
+
+    g.selectAll("text")
+      .data(titles)
+      .enter().append("text")
+      .attr("class", (d,i) -> if i == 2 then "big-title" else if i > 2 then "bottom-title" else "top-title")
+      .text((d) -> d.toUpperCase())
+      .attr("text-anchor", "middle")
+      .attr("y", (d,i) -> 20 * i + if i >= 2 then 10 else 0)
 
   chart = (selection) ->
     selection.each (rawData) ->
@@ -156,21 +174,6 @@ Plot = () ->
         .style("stroke", "#77393c")
         .style("stroke-width", 4.8)
 
-
-      diag = defs.append("pattern")
-        .attr("id", "diag-pattern")
-        .attr("patternUnits", "userSpaceOnUse")
-        .attr("x", 0)
-        .attr("y", 3)
-        .attr("width", 5)
-        .attr("height", 5)
-      diag.append("path")
-        .attr("d", "M0 0 l5 5")
-        .style("fill", "none")
-        .style("stroke", "blue")
-        .style("stroke-width", 1)
-      
-      
       svg.attr("width", width + margin.left + margin.right )
       svg.attr("height", height + margin.top + margin.bottom )
 
@@ -183,6 +186,7 @@ Plot = () ->
   update = () ->
 
     addKey()
+    addTitle()
 
     tree = points.selectAll('.tree')
       .data(data).enter().append("g")
