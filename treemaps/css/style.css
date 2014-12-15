@@ -29,3 +29,27 @@ body {
 .me {
   /* fill:white; */
 }
+
+a {
+  text-decoration:none;
+  color: #333333;
+  font-weight:bold;
+}
+
+a:visited {
+  color: #333333;
+}
+
+#footer_container {
+  width: 980px;
+}
+
+#footer {
+  text-transform:uppercase;
+
+  padding-top: 20px;
+  margin: auto;
+  /* width: 880px; */
+  text-align: center;
+}  
+

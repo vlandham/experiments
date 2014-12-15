@@ -18,19 +18,17 @@ Plot = () ->
            {"code":"oth",  "name":"All other Denominations"}
           ]
   colors = {"me":"url(#lines_red)","bap":"#614e23","pres":"#5c7e7d","cat":"#551521","con":"url(#lines_blue)","epi":"#d96d2c","lut":"url(#lines_orange)","chr":"#ac2028","dut":"#9d8354", "uni":"url(#lines_purple)", "mor":"#150912","oth":"#551b1a"}
+
   background = "#a89888"
   width = 1100
-  height = 900
+  height = 700
   bigSize = 300
   littleSize = 130
   padding = 40
   data = []
-  points = null
+  trees = null
+  svg = null
   margin = {top: 20, right: 20, bottom: 20, left: 20}
-  xScale = d3.scale.linear().domain([0,10]).range([0,width])
-  yScale = d3.scale.linear().domain([0,10]).range([0,height])
-  xValue = (d) -> parseFloat(d.x)
-  yValue = (d) -> parseFloat(d.y)
   treeScale = d3.scale.linear().domain([0,100]).range([0,littleSize])
   treemap = d3.layout.treemap()
     .sort((a,b) -> b.index - a.index)
@@ -55,7 +53,7 @@ Plot = () ->
     keyWidth = 50
     keyHeight = 12
     keyPadding = 1
-    keys = points.selectAll(".key")
+    keys = trees.selectAll(".key")
       .data(names)
     keyG = keys.enter().append("g")
       .attr("class", "key")
@@ -77,7 +75,7 @@ Plot = () ->
               "with the proportion of such church accommodation furnished by each of",
               "the largest four denominations within each state and by each of",
               "the largest eight denominations within the united states."]
-    g = points.append("g")
+    g = trees.append("g")
       .attr("class", "title")
       .attr("transform", "translate(#{width / 2}, 10)")
 
@@ -89,90 +87,93 @@ Plot = () ->
       .attr("text-anchor", "middle")
       .attr("y", (d,i) -> 20 * i + if i >= 2 then 10 else 0)
 
+  addPatterns = () ->
+    defs = svg.append("defs")
+    hatch1 = defs.append("pattern")
+      .attr("id", "lines_red")
+      .attr("patternUnits", "userSpaceOnUse")
+      .attr("patternTransform", "rotate(#{-220})")
+      .attr("x", 0)
+      .attr("y", 2)
+      .attr("width", 5)
+      .attr("height", 3)
+      .append("g")
+    hatch1.append("rect")
+      .attr("fill", "white")
+      .attr("width", 5)
+      .attr("height", 3)
+    hatch1.append("path")
+      .attr("d", "M0 0 H 5")
+      .style("fill", "none")
+      .style("stroke", "red")
+      .style("stroke-width", 3.6)
+
+    hatch2 = defs.append("pattern")
+      .attr("id", "lines_blue")
+      .attr("patternUnits", "userSpaceOnUse")
+      .attr("patternTransform", "rotate(#{-220})")
+      .attr("x", 0)
+      .attr("y", 2)
+      .attr("width", 5)
+      .attr("height", 3)
+      .append("g")
+    hatch2.append("rect")
+      .attr("fill", "white")
+      .attr("width", 5)
+      .attr("height", 3)
+    hatch2.append("path")
+      .attr("d", "M0 0 H 5")
+      .style("fill", "none")
+      .style("stroke", "#4B6655")
+      .style("stroke-width", 3.6)
+
+    hatch3 = defs.append("pattern")
+      .attr("id", "lines_orange")
+      .attr("patternUnits", "userSpaceOnUse")
+      .attr("patternTransform", "rotate(#{-220})")
+      .attr("x", 0)
+      .attr("y", 2)
+      .attr("width", 5)
+      .attr("height", 3)
+      .append("g")
+    hatch3.append("rect")
+      .attr("fill", "white")
+      .attr("width", 5)
+      .attr("height", 3)
+    hatch3.append("path")
+      .attr("d", "M0 0 H 5")
+      .style("fill", "none")
+      .style("stroke", "#C6581B")
+      .style("stroke-width", 4.8)
+
+    hatch4 = defs.append("pattern")
+      .attr("id", "lines_purple")
+      .attr("patternUnits", "userSpaceOnUse")
+      .attr("patternTransform", "rotate(#{-220})")
+      .attr("x", 0)
+      .attr("y", 2)
+      .attr("width", 5)
+      .attr("height", 3)
+      .append("g")
+    hatch4.append("rect")
+      .attr("fill", "white")
+      .attr("width", 5)
+      .attr("height", 3)
+    hatch4.append("path")
+      .attr("d", "M0 0 H 5")
+      .style("fill", "none")
+      .style("stroke", "#77393c")
+      .style("stroke-width", 4.8)
+
   chart = (selection) ->
     selection.each (rawData) ->
 
       data = processData(rawData)
-      console.log(data)
-
       svg = d3.select(this).selectAll("svg").data([data])
       gEnter = svg.enter().append("svg").append("g")
 
-      defs = svg.append("defs")
-      hatch1 = defs.append("pattern")
-        .attr("id", "lines_red")
-        .attr("patternUnits", "userSpaceOnUse")
-        .attr("patternTransform", "rotate(#{-220})")
-        .attr("x", 0)
-        .attr("y", 2)
-        .attr("width", 5)
-        .attr("height", 3)
-        .append("g")
-      hatch1.append("rect")
-        .attr("fill", "white")
-        .attr("width", 5)
-        .attr("height", 3)
-      hatch1.append("path")
-        .attr("d", "M0 0 H 5")
-        .style("fill", "none")
-        .style("stroke", "red")
-        .style("stroke-width", 3.6)
-      hatch2 = defs.append("pattern")
-        .attr("id", "lines_blue")
-        .attr("patternUnits", "userSpaceOnUse")
-        .attr("patternTransform", "rotate(#{-220})")
-        .attr("x", 0)
-        .attr("y", 2)
-        .attr("width", 5)
-        .attr("height", 3)
-        .append("g")
-      hatch2.append("rect")
-        .attr("fill", "white")
-        .attr("width", 5)
-        .attr("height", 3)
-      hatch2.append("path")
-        .attr("d", "M0 0 H 5")
-        .style("fill", "none")
-        .style("stroke", "#4B6655")
-        .style("stroke-width", 3.6)
+      addPatterns()
 
-      hatch3 = defs.append("pattern")
-        .attr("id", "lines_orange")
-        .attr("patternUnits", "userSpaceOnUse")
-        .attr("patternTransform", "rotate(#{-220})")
-        .attr("x", 0)
-        .attr("y", 2)
-        .attr("width", 5)
-        .attr("height", 3)
-        .append("g")
-      hatch3.append("rect")
-        .attr("fill", "white")
-        .attr("width", 5)
-        .attr("height", 3)
-      hatch3.append("path")
-        .attr("d", "M0 0 H 5")
-        .style("fill", "none")
-        .style("stroke", "#C6581B")
-        .style("stroke-width", 4.8)
-
-      hatch4 = defs.append("pattern")
-        .attr("id", "lines_purple")
-        .attr("patternUnits", "userSpaceOnUse")
-        .attr("patternTransform", "rotate(#{-220})")
-        .attr("x", 0)
-        .attr("y", 2)
-        .attr("width", 5)
-        .attr("height", 3)
-        .append("g")
-      hatch4.append("rect")
-        .attr("fill", "white")
-        .attr("width", 5)
-        .attr("height", 3)
-      hatch4.append("path")
-        .attr("d", "M0 0 H 5")
-        .style("fill", "none")
-        .style("stroke", "#77393c")
-        .style("stroke-width", 4.8)
 
       svg.attr("width", width + margin.left + margin.right )
       svg.attr("height", height + margin.top + margin.bottom )
@@ -180,15 +181,13 @@ Plot = () ->
       g = svg.select("g")
         .attr("transform", "translate(#{margin.left},#{margin.top})")
 
-      points = g.append("g").attr("id", "vis_points")
+      trees = g.append("g").attr("id", "vis_points")
+      addKey()
+      addTitle()
       update()
 
   update = () ->
-
-    addKey()
-    addTitle()
-
-    tree = points.selectAll('.tree')
+    tree = trees.selectAll('.tree')
       .data(data).enter().append("g")
       .attr("class","tree")
       .attr "transform", (d,i) ->
@@ -209,12 +208,10 @@ Plot = () ->
       .attr('dy', 18)
       .text((d) -> d.name.toUpperCase())
 
-
     treeG = tree.append("g")
       .attr "transform", (d) ->
         scale = d.known / 100.0
         trans = (d.realSize - (d.realSize * scale)) / 2
-        console.log(trans)
         "translate(#{trans},#{trans})scale(#{scale})"
 
     treeG.selectAll(".slice")
@@ -226,7 +223,6 @@ Plot = () ->
       .attr("width", (d) -> Math.max(0, d.dx))
       .attr("height", (d) -> Math.max(0, d.dy))
       .attr("fill", (d) -> colors[d.name])
-
 
 
   chart.height = (_) ->
@@ -247,18 +243,6 @@ Plot = () ->
     margin = _
     chart
 
-  chart.x = (_) ->
-    if !arguments.length
-      return xValue
-    xValue = _
-    chart
-
-  chart.y = (_) ->
-    if !arguments.length
-      return yValue
-    yValue = _
-    chart
-
   return chart
 
 root.Plot = Plot
@@ -267,7 +251,6 @@ root.plotData = (selector, data, plot) ->
   d3.select(selector)
     .datum(data)
     .call(plot)
-
 
 $ ->
 
