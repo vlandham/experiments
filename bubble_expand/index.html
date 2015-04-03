@@ -28,18 +28,18 @@ body {
 }
 
     </style>
+    <script type="text/javascript" src="./dat.gui.js"></script>
+    <script type="text/javascript" src="./d3.v3.js"></script>
   </head>
   <body>
     <h2> </h2>
-    <script type="text/javascript" src="./bubble_expand/dat.gui.js"></script>
-    <script type="text/javascript" src="./bubble_expand/d3.v3.js"></script>
     <script type="text/javascript">
 
 var w = 1024,
     h = 740,
     nodes = [],
     links = [],
-    node, 
+    node,
     link;
 
 function charge(d) {
@@ -47,8 +47,8 @@ function charge(d) {
 }
 
 changeCharge = function(number) {
-		force.charge(function(d, i) { 
-			return i ? -3 : -number; 
+		force.charge(function(d, i) {
+			return i ? -3 : -number;
 		});
 		force.resume();
 	}
@@ -57,8 +57,8 @@ var force = d3.layout.force()
   /* .size([w, h]) */
   .size([0,0])
   .gravity(0.05)
-  .charge(function(d, i) { 
-      return i ? -6 : -80; 
+  .charge(function(d, i) {
+      return i ? -6 : -80;
       })
   .on("tick", tick)
 
@@ -97,15 +97,15 @@ var makeCircle = function(x, y) {
 			for(var i = 0; i<=count; i++) {
 				if(size%2>=1) {
 					if(i==0) {
-						makeCircle(0+1,y);	
+						makeCircle(0+1,y);
 					} else {
 						makeCircle(i*dx, y);
-						makeCircle(-i*dx, y);	
+						makeCircle(-i*dx, y);
 					}
 				} else {
 					if(i!=0) {
 						makeCircle(i*dx - dx/2, y);
-						makeCircle(-i*dx + dx/2, y);	
+						makeCircle(-i*dx + dx/2, y);
 					}
 				}
 			}
@@ -220,23 +220,23 @@ var q = d3.geom.quadtree(nodes),
 			while (++i < n) {
 				q.visit(collide(nodes[i]));
 			}
-  
+
       node
         .attr("cx", function(d) {
 					if(d.fixed) {
 						d.x = d.xfixed;
-						return d.xfixed; 	
+						return d.xfixed;
 					} else {
-						return d.x; 
+						return d.x;
 					}
 				})
       .attr("r", function(d) { return d.radius; })
-        .attr("cy", function(d) { 
+        .attr("cy", function(d) {
 					if(d.fixed) {
 						d.y = d.yfixed;
-						return d.yfixed; 	
+						return d.yfixed;
 					} else {
-						return d.y; 
+						return d.y;
 					}
 				});
 
@@ -270,13 +270,13 @@ var config = {'charge':8};
 var graver = gui.add(config, 'charge', 0, 200);
 graver.onChange(function(value) {
     c.attr("r", value);
-    force.charge(function(d, i) { 
-      return i ? -4 : -Math.pow(value-8, 0.8)*40; 
-       // return i ? -4 : value * -30; 
+    force.charge(function(d, i) {
+      return i ? -4 : -Math.pow(value-8, 0.8)*40;
+       // return i ? -4 : value * -30;
       }).start();
 
 
-// force.charge(function(d, i) { 
+// force.charge(function(d, i) {
 //   if(d.fixed) {
 //     return -Math.pow(value, 0.8) * 40;
 //   } else {

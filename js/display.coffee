@@ -71,6 +71,7 @@ update = () ->
     .append("a")
     .attr("href", (d) -> d.url)
     .append("img")
+    .attr("class", "img-responsive")
     .attr("src", (d) -> "img/" + d.img)
     # .attr("onload", getHeight)
 

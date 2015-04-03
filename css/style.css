@@ -13,10 +13,23 @@ p {
 #header h1 {
   font-family: 'Helvetica', arial, serif;
   font-weight:700;
-	font-size: 5.0em;
+	/* font-size: 5.0em; */
+	font-size: 500%;
 	display: inline;
 	letter-spacing: -0.03em;
 }
+
+@media screen and (max-width:510px) {
+  #header {
+    padding: 0;
+  }
+  #header h1 {
+    font-size: 300%;
+    text-align: left;
+    margin: 5px 0 5px 5px;
+  }
+}
+
 
 #header h1 a {
   text-decoration: none;
