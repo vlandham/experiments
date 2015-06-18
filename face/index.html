@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<link type="text/css" rel="stylesheet" href="../css/style.css"/>
+<style type="text/css">
+
+  circle.node {
+    cursor: pointer;
+    stroke: #000;
+    stroke-width: .5px;
+  }
+
+  line.link {
+    fill: none;
+    stroke: #444;
+    stroke-width: 4px;
+  }
+
+</style>
+
+<script type="text/javascript">
+var substeps = ['start'];
+</script>
+</head>
+<body>
+<script type="text/javascript" src="../js/libs/d3.v3.js"></script>
+<script type="text/javascript">
+
+var padding_left = 0;
+
+var w = 1000,
+    h = 800,
+    nodes = [],
+    links = [],
+    node,
+    link;
+
+
+function charge(d) {
+  return -Math.pow(d.size, 2.0) / 5;
+}
+
+function distance(l) {
+  return l.length * 120;
+}
+
+  var force = d3.layout.force()
+    .nodes(nodes)
+    .links(links)
+    .size([w , h])
+    .on("tick", tick)
+    .linkDistance(distance)
+    .charge(charge);
+
+
+  var vis = d3.select("body").append("svg")
+    .attr("width", w )
+    .attr("height", h);
+
+
+  function update() {
+
+    // Update the nodes…
+    node = vis.selectAll(".node")
+      .data(nodes)
+
+      // Enter any new nodes.
+      node.enter().append("image")
+      .attr("xlink:href", function(d) { return "face_nodes/" + d.name + ".png"; })
+      .attr("class", "node")
+      .attr("x", function(d) { return -(d.size / 2); })
+      .attr("y", function(d) { return -(d.size / 2); })
+      .attr("width", function(d) { return d.size; })
+      .attr("height", function(d) { return d.size; })
+      .call(force.drag);
+
+    // Exit any old nodes.
+    node.exit().remove();
+
+    link = vis.selectAll("line.link")
+      .data(links);
+
+    // Enter any new links.
+    link.enter().insert("line", ".node")
+      .attr("class", "link")
+      .attr("x1", function(d) { return d.source.x; })
+      .attr("y1", function(d) { return d.source.y; })
+      .attr("x2", function(d) { return d.target.x; })
+      .attr("y2", function(d) { return d.target.y; });
+
+    // Restart the force layout.
+    force
+      .start();
+  }
+
+function tick(e) {
+  node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+
+  link.attr("x1", function(d) { return d.source.x; })
+    .attr("y1", function(d) { return d.source.y; })
+    .attr("x2", function(d) { return d.target.x; })
+    .attr("y2", function(d) { return d.target.y; });
+};
+
+function load(error, data) {
+  data.nodes.forEach(function(d) {
+      nodes.push(d);
+      });
+
+  data.links.forEach(function(l) {
+      links.push(l);
+      });
+  update();
+
+}
+
+
+d3.json("face_nodes/face.json", load);
+
+
+
+    </script>
+  </body>
+</html>
