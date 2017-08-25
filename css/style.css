@@ -1,22 +1,35 @@
+body {
+  font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #222;
+}
 
-p {
+/*p {
   font-size: 20px;
+}*/
+
+a {
+  color: #6e6e6e;
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #3d3d3d;
 }
 
 #header {
-/*	text-transform: lowercase;*/
 	text-align: left;
 	padding: 1.5em;
-	text-align: center;
 }
 
 #header h1 {
-  font-family: 'Helvetica', arial, serif;
-  font-weight:700;
-	/* font-size: 5.0em; */
-	font-size: 500%;
+  font-weight: 600;
+  font-size: 5.0rem;
 	display: inline;
-	letter-spacing: -0.03em;
+	/*letter-spacing: -0.03em;*/
 }
 
 @media screen and (max-width:510px) {
@@ -24,7 +37,6 @@ p {
     padding: 0;
   }
   #header h1 {
-    font-size: 300%;
     text-align: left;
     margin: 5px 0 5px 5px;
   }
@@ -42,30 +54,30 @@ p {
 }
 
 #menu {
-	border-top: 3px solid #3d3d3d;
+  border-top: 3px solid #3d3d3d;
 }
 
 #menu ul {
-	list-style: none;
-	margin: 0;
-	text-align: right;
-	padding-right: 1.0em;
+  list-style: none;
+  margin: 0;
+  text-align: right;
+  padding-right: 1.0em;
 }
 
 #menu ul li {
-	display: inline;
+  display: inline;
 }
 
 #menu ul li a {
-	font-size: 1.3em;
-	padding: 0 0.5em;
-	line-height: 2.5em;
-	font-weight: normal;
-	text-decoration: none;
+  font-size: 1.3em;
+  padding: 0 0.5em;
+  line-height: 2.5em;
+  font-weight: normal;
+  text-decoration: none;
 }
 
 #menu ul li a.highlight {
-  color: black;
+  text-decoration: underline;
 }
 
 
@@ -73,6 +85,10 @@ p {
   float:left;
   margin-right: 20px;
   margin-bottom:10px;
+}
+
+a.btn {
+  text-decoration: none;
 }
 
 #filters {
@@ -93,6 +109,18 @@ p {
   display:block;
 }
 
+h2.title {
+  font-size: 4.2rem;
+}
+
+h2.title a {
+  text-decoration: none;
+}
+
+h2.title a:hover {
+  text-decoration: underline;
+}
+
 .experiment img {
 }
 
@@ -111,6 +139,7 @@ p {
   margin-bottom: 10px;
   float: left;
   margin-right: 20px;
+  max-width: 300px;
   /* height: 290px; */
 }
 
@@ -125,6 +154,3 @@ p {
 #footer p {
 	padding-right: 1.5em;
 }
-
-
-

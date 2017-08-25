@@ -75,10 +75,10 @@ update = () ->
     .attr("src", (d) -> "img/" + d.img)
     # .attr("onload", getHeight)
 
-  expE.append("a")
-    .attr("href", (d) -> d.url)
-    .append("h2")
+  expE.append("h2")
     .attr("class", "title")
+    .append("a")
+    .attr("href", (d) -> d.url)
     .text((d) -> d.name)
 
   expE.append("p")
@@ -106,4 +106,3 @@ display = (error, data) ->
 
 $ ->
   d3.json("data/data.json", display)
-

@@ -1,10 +1,23 @@
 [
     {
+        "id": "force_playground",
+        "name": "Force Playground",
+        "description": "A little tool that lets you explore the new D3v4 force-directed simulation and its forces. I tried to make almost every parameter in the simulation modifiable. Add and remove forces. See how they interact with one another. You can even change the number of nodes and add edges (though this feature isn't all that well thought out).",
+        "tags": [
+          "animations",
+          "charts"
+        ],
+        "date": "2017-08-25",
+        "img": "force-playground.png",
+        "url": "http://vallandingham.me/force-playground/"
+    },
+    {
         "id": "aniclip",
         "name": "Animated Clipping Paths",
         "description": "SVG clipping paths allow you to hide portions of your SVG - clipping them from view. Here, we use clipping paths based on text attributes on top of images to make cool looking headers. Then we add some fun into the mix by animating portions of the clipping path. The possibilties for unnecessary animations are endless!",
         "tags": [
-          "animations"
+          "animations",
+          "fun"
         ],
         "date": "2014-10-28",
         "img": "aniclip.png",
@@ -15,6 +28,7 @@
         "name": "Word Flip",
         "description": "This little project started with a question from <a href='https://twitter.com/jschwabish'>Jon Schwabish</a>'s son: What words are still words when flipped 180&#xb0;? Challenge Accepted. Type in a word and Word Flip shows you it flipped! With an extra bonus of listing out some words found that meet this requirement. See if you can find more!",
         "tags": [
+          "fun"
         ],
         "date": "2014-09-01",
         "img": "word_flip.png",
@@ -71,7 +85,8 @@
         "description": "A slight riff on the nice <a href='http://bl.ocks.org/awoodruff/9216081'>Projection Face</a> tool from Andy Woodruff. Here, I just wanted to see all the faces mashed together - small multiples style.",
         "tags": [
             "vintage",
-            "maps"
+            "maps",
+            "fun"
         ],
         "date": "2014-01-01",
         "img": "geo_faces.png",
@@ -115,7 +130,8 @@
         "name": "Employee Timeline",
         "description": "Little timeline of when my co-workers started their employment. Meant to show that it takes an island. Wonderful illustration work by <a href='http://erinshellman.com/'>Erin Shellman</a>. Used for a few presentations.",
         "tags": [
-            "animations"
+            "animations",
+            "fun"
         ],
         "date": "2014-01-01",
         "img": "timeline.png",
@@ -190,4 +206,3 @@
       "url": "http://vallandingham.me/d3_sat"
     }
 ]
-
