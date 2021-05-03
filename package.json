@@ -1,0 +1,22 @@
+{
+  "name": "experiments",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vlandham/experiments.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vlandham/experiments/issues"
+  },
+  "homepage": "https://github.com/vlandham/experiments#readme",
+  "devDependencies": {
+    "serve": "^11.3.2"
+  }
+}
