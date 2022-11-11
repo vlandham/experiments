@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/vlandham/experiments#readme",
   "devDependencies": {
-    "serve": "^11.3.2"
+    "serve": "^14.1.1"
   }
 }
